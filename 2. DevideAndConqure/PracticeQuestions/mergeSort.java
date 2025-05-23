@@ -3,14 +3,14 @@
 // Sample Input 1 : arr = { "sun", "earth", "mars", "mercury" }
 // Sample Output 1 : arr = { "earth", "mars", "mercury", "sun"}
 import java.util.*;
-public class mergSort{
+public class mergeSort{
     public static void print(String arr[]){
         for(int i = 0 ; i < arr.length ; i++){
             System.out.print(arr[i] + " ");
         }
         System.out.println();
     }
-    public static void merg(String arr[],int si,int ei,int mid){
+    public static void merge(String arr[],int si,int ei,int mid){
         int i = si;
         int j = mid +1;
         String temp[] = new String[ei-si+1];
@@ -40,7 +40,7 @@ public class mergSort{
         int mid = si + (ei-si)/2;
         sort(arr,si,mid);
         sort(arr,mid+1,ei);
-        merg(arr,si,ei,mid);
+        merge(arr,si,ei,mid);
     }
     public static void main(String args[]){
 
