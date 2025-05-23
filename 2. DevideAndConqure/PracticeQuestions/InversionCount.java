@@ -14,8 +14,10 @@
 // // Note - This question is important. Even if you are not able to come up with the approach,
 // // please understand the solution.
 
+
+// Brute force Approach
 // // import java.util.*;
-// // public class InverseCount{
+// // public class InversionCount{
 // //     public static int invereCount(int arr[]){
 // //         int count = 0;
 // //         for(int i=0;i<arr.length;i++){
@@ -34,7 +36,7 @@
 // // }
 
 import java.util.*;
-public class InverseCount{
+public class InversionCount{
 
      public static int merge(int arr[], int si,int ei,int mid) {
         int i = si;
@@ -64,19 +66,19 @@ public class InverseCount{
 
     }
 
-    public static int inverseCount(int arr[],int si,int ei){
+    public static int inversionCount(int arr[],int si,int ei){
         if(si >= ei){
             return 0;
         }
         int mid = si + (ei - si)/2;
 
-        int leftCount = inverseCount(arr,si,mid);
-        int rightCount = inverseCount(arr,mid+1,ei);
+        int leftCount = inversionCount(arr,si,mid);
+        int rightCount = inversionCount(arr,mid+1,ei);
         int jointCount = merge(arr,si,ei,mid);
         return leftCount + rightCount + jointCount;
     }
     public static void main(String args[]){
         int arr[] = {2,4,1,3,5};
-        System.out.println(inverseCount(arr,0,arr.length-1));
+        System.out.println(inversionCount(arr,0,arr.length-1));
     }
 }
